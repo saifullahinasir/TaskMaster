@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="logo">
+                <h2>TaskMaster</h2>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search tasks...">
+                </div>
+                <div class="quick-actions">
+                    <button class="add-task-btn"><i class="fas fa-plus"></i> New Task</button>
+                    <i class="fas fa-bell"></i>
+                </div>
+            </header>
+
+            <!-- Task Overview Section (Modify it as needed) -->
+<section class="task-overview">
+    <div class="stats-card">
+        <h3>Total Tasks</h3>
+        <p id="totalTasksCounter" class="stat-number">0</p>
+    </div>
+    <div class="stats-card">
+        <h3>In Progress</h3>
+        <p id="inProgressCounter" class="stat-number">0</p>
+    </div>
+    <div class="stats-card">
+        <h3>Completed</h3>
+        <p id="completedCounter" class="stat-number">0</p>
+    </div>
+    <div class="stats-card">
+        <h3>Pending</h3>
+        <p id="pendingCounter" class="stat-number">0</p>
+    </div>
+</section>
+
+            <!-- Task List -->
+            <section class="task-list">
+                <div class="task-list-header">
+                    <h2>Recent Tasks</h2>
+                    <div class="task-filters">
+                        <select>
+                            <option>All Tasks</option>
+                            <option>High Priority</option>
+                            <option>Medium Priority</option>
+                            <option>Low Priority</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="tasks-container" id="tasksList">
+                    <!-- Tasks will be dynamically added here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Add Task Modal -->
+    <div class="modal" id="addTaskModal">
+        <div class="modal-content">
+            <h2>Add New Task</h2>
+            <form id="addTaskForm">
+                <input type="text" placeholder="Task Title" required>
+                <textarea placeholder="Task Description" required></textarea>
+                <select required>
+                    <option value="">Select Priority</option>
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+                <input type="date" required>
+                <div class="modal-buttons">
+                    <button type="button" class="cancel-btn">Cancel</button>
+                    <button type="submit" class="submit-btn">Add Task</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
