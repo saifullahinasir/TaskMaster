@@ -19,8 +19,8 @@ mongoose.connect(process.env.MONGODB_URI, {
   .catch(err => console.error('MongoDB connection error:', err));
 
 // Routes
-app.use('/api/auth', require('auth'));
-app.use('/api/tasks', require('tasks'));
+app.use('/api/auth', require('./auth')); // Adjusted path to root
+app.use('/api/tasks', require('./tasks')); // Adjusted path to root
 
 // Serve frontend
 app.get('*', (req, res) => {
