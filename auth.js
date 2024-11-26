@@ -14,20 +14,18 @@ signInButton.addEventListener('click', () => {
 // Handle user registration
 document.querySelector('.sign-up-form').addEventListener('submit', async (e) => {
     e.preventDefault();
-    
+
     const userData = {
         username: document.getElementById('registerUsername').value,
         email: document.getElementById('registerEmail').value,
-        password: document.getElementById('registerPassword').value
+        password: document.getElementById('registerPassword').value,
     };
 
     try {
         const response = await fetch('/api/auth/register', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(userData)
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(userData),
         });
 
         if (response.ok) {
@@ -43,19 +41,17 @@ document.querySelector('.sign-up-form').addEventListener('submit', async (e) => 
 // Handle user login
 document.querySelector('.sign-in-form').addEventListener('submit', async (e) => {
     e.preventDefault();
-    
+
     const loginData = {
         username: document.getElementById('loginUsername').value,
-        password: document.getElementById('loginPassword').value
+        password: document.getElementById('loginPassword').value,
     };
 
     try {
         const response = await fetch('/api/auth/login', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(loginData)
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(loginData),
         });
 
         if (response.ok) {
